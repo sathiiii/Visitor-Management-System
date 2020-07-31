@@ -3,7 +3,6 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    transition: 0.3s;
 }
 
 /* Fixed header */
@@ -76,6 +75,7 @@ nav {
 }
 
 .nav-link {
+    transition: 0.2s;
     padding: 30px 0 25px 0;
     text-decoration: none;
     color: #707070;
@@ -96,6 +96,7 @@ nav {
 }
 
 .action-btn > a {
+    transition: 0.3s;
     background-color: #2CD889;
     color: white;
     padding: 10px 20px;
@@ -133,6 +134,10 @@ nav {
 
 .messages, .notifications {
     padding-right: 0.1rem;
+}
+
+.messages svg, .notifications svg, .profile {
+    transition: 0.3s;
 }
 
 .nav-cover {
