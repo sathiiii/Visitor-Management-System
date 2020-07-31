@@ -222,7 +222,7 @@ body {
         display: none;
     }
 
-    .desktop-hide {
+    .burger {
         display: flex;
         margin-left: auto;
         margin-right: 10px;
