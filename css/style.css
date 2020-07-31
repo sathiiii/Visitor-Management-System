@@ -16,7 +16,7 @@ header {
     align-items: center;
     -webkit-backdrop-filter: blur(20px) saturate(150%);
     backdrop-filter: blur(20px) saturate(150%);
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
 }
 
 header::after {
@@ -35,7 +35,8 @@ header::after {
 
 .logo-container {
     margin-left: 10px;
-    flex: 1;
+    margin-right: 10px;
+    float: left;
 }
 
 .logo-container svg {
@@ -48,8 +49,10 @@ header::after {
 
 nav {
     flex: 2;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    width: 0.5rem;
     font-weight: 700;
-    transform: translateX(-20%);
     height: 100%;
     padding-top: 30px;
 }
@@ -66,7 +69,7 @@ nav {
 .nav-links .nav-link:hover {
     opacity: 1;
     font-size: 1rem;
-    padding-bottom: 20px;
+    padding-bottom: 22px;
 }
 
 .nav-link {
@@ -102,7 +105,7 @@ nav {
 }
 
 #add-visitor {
-    margin-right: 2rem;
+    margin-right: 1rem;
 }
 
 .notifications:hover svg, .messages:hover svg {
@@ -115,13 +118,17 @@ nav {
     filter: brightness(110%);
 }
 
-.notifications > img, .messages > img {
-    height: 1.5em;
-}
-
 .profile > img { 
     width: 42x;
     height: 42px;
+}
+
+.burger {
+    display: none;
+}
+
+.messages, .notifications {
+    padding-right: 0.1rem;
 }
 
 .nav-cover {
@@ -134,4 +141,89 @@ nav {
 body {
     background-color: #F0FAF8;
     font-family: 'Poppins', sans-serif;
+}
+
+@media screen and (max-width:1095px) {
+    header {
+        align-items: center;
+        display: grid;
+        height: 160px;
+    }
+
+    .nav-cover {
+        height: 160px;
+    }
+
+    .logo-container {
+        grid-row: 1;
+        display: inline;
+    }
+
+    nav {
+        grid-column: 1/2 span;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .nav-links > li {
+        width: 20%;
+    }
+
+    .nav-link {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .nav-links {
+        text-align: center;
+        width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+    }
+
+    .nav-links .nav-link:hover {
+        padding-bottom: 23px;
+    }
+
+    .nav-right {
+        grid-row: 1;
+        display: flex;
+    }
+
+    .burger {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    header {
+        height: 80px;
+        display: inline-flex;
+    }
+
+    .nav-cover {
+        height: 80px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .nav-right {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+        margin-left: auto;
+        margin-right: 10px;
+        order: 2;
+        cursor: pointer;
+    }
 }
