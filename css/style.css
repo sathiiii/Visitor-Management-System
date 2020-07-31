@@ -1,3 +1,4 @@
+/* Apply to all elements */
 * {
     margin: 0px;
     padding: 0px;
@@ -5,6 +6,7 @@
     transition: 0.3s;
 }
 
+/* Fixed header */
 header {
     position: fixed;
     width: 100%;
@@ -19,6 +21,7 @@ header {
     box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
 }
 
+/* Pseudo element for the background blur */
 header::after {
     content: "";
     opacity: 0.3;
@@ -123,7 +126,8 @@ nav {
     height: 42px;
 }
 
-.burger {
+/* Will only be visible after width: 650px */
+.desktop-hide {
     display: none;
 }
 
@@ -143,6 +147,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+/* Break Point */
 @media screen and (max-width:1095px) {
     header {
         align-items: center;
@@ -196,11 +201,13 @@ body {
         display: flex;
     }
 
-    .burger {
+    /* Will only be visible after width: 650px */
+    .desktop-hide {
         display: none;
     }
 }
 
+/* Break Point */
 @media screen and (max-width: 650px) {
     header {
         height: 80px;
@@ -211,15 +218,11 @@ body {
         height: 80px;
     }
 
-    nav {
+    .mobile-hide {
         display: none;
     }
 
-    .nav-right {
-        display: none;
-    }
-
-    .burger {
+    .desktop-hide {
         display: flex;
         margin-left: auto;
         margin-right: 10px;
