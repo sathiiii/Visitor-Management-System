@@ -56,10 +56,13 @@ CREATE TABLE `vms`.`visitors` (
    `visiting_date` DATE NOT NULL,
    `from` TIME NOT NULL,
    `to` TIME NOT NULL,
+   `to_meet` VARCHAR(30),
+   `visiting_places` VARCHAR(50),
+   `status` VARCHAR(15) NOT NULL,
    PRIMARY KEY (`visitors_id`),
    KEY (`NIC`)
    );
-   INSERT INTO `vms`.`visitors` (`visitors_id`, `first_name`, `last_name`, `NIC`, `address`, `tel_no`, `email`, `purpose`, `visiting_date`, `from`, `to`) VALUES ('1', 'Ravana', 'King', '00123344334V', 'Paralova', '0000000000', 'ravana@ravana.lk', 'nidagena aharuna', '2020-12-23', '12:30', '13:30');
+   INSERT INTO `vms`.`visitors` (`visitors_id`, `first_name`, `last_name`, `NIC`, `address`, `tel_no`, `email`, `purpose`, `visiting_date`, `from`, `to`, `status`) VALUES ('1', 'Ravana', 'King', '00123344334V', 'Paralova', '0000000000', 'ravana@ravana.lk', 'nidagena aharuna', '2020-12-23', '12:30', '13:30', 'Approved');
    
    CREATE TABLE `vms`.`vehicles` (
 	`reg_no` VARCHAR(10) NOT NULL,
