@@ -35,7 +35,7 @@ INSERT INTO `vms`.`students` (`reg_no`, `first_name`, `last_name`, `facutly`, `d
 INSERT INTO `vms`.`students` (`reg_no`, `first_name`, `last_name`, `facutly`, `department`, `address`, `phone_no`, `email`) VALUES ('W/17/334', 'Donald', 'Trump', 'ART', 'POL', 'America', '1234456786', 'Danne naa');
 
 CREATE TABLE `vms`.`admins` (
-  `admin_id` INT NOT NULL,
+  `admin_id` INT NOT NULL AUTO_INCREMENT,
   `staff_id` INT NOT NULL,
   `ortharization` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`admin_id`),
@@ -45,20 +45,21 @@ INSERT INTO `vms`.`admins` (`admin_id`, `staff_id`, `ortharization`) VALUES ('1'
 INSERT INTO `vms`.`admins` (`admin_id`, `staff_id`, `ortharization`) VALUES ('2', '1', 'Faculty Only');
 
 CREATE TABLE `vms`.`visitors` (
-   `visitors_id` INT NOT NULL,
+   `visitors_id` INT NOT NULL AUTO_INCREMENT,
    `first_name` VARCHAR(20) NOT NULL,
    `last_name` VARCHAR(20) NOT NULL,
    `NIC` VARCHAR(20) NOT NULL,
    `address` VARCHAR(70) NOT NULL,
    `tel_no` VARCHAR(10) NOT NULL,
    `email` VARCHAR(30) NOT NULL,
+   `password` VARCHAR(40) NOT NULL,
    PRIMARY KEY (`visitors_id`),
    KEY (`NIC`)
    );
-   INSERT INTO `vms`.`visitors` (`visitors_id`, `first_name`, `last_name`, `NIC`, `address`, `tel_no`, `email`) VALUES ('1', 'Ravana', 'King', '00123344334V', 'Paralova', '0000000000', 'ravana@ravana.lk');
+   INSERT INTO `vms`.`visitors` (`visitors_id`, `first_name`, `last_name`, `NIC`, `address`, `tel_no`, `email`, `password`) VALUES ('1', 'Ravana', 'King', '00123344334V', 'Paralova', '0000000000', 'ravana@ravana.lk', 'seetha123');
    
    CREATE TABLE `vms`.`visiting_requests` (
-   `request_id` INT NOT NULL,
+   `request_id` INT NOT NULL AUTO_INCREMENT,
    `visitors_id` INT NOT NULL,
    `purpose` VARCHAR(50) NOT NULL,
    `visiting_date` DATE NOT NULL,
