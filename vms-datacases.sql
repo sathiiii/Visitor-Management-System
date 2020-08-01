@@ -52,17 +52,27 @@ CREATE TABLE `vms`.`visitors` (
    `address` VARCHAR(70) NOT NULL,
    `tel_no` VARCHAR(10) NOT NULL,
    `email` VARCHAR(30) NOT NULL,
+   PRIMARY KEY (`visitors_id`),
+   KEY (`NIC`)
+   );
+   INSERT INTO `vms`.`visitors` (`visitors_id`, `first_name`, `last_name`, `NIC`, `address`, `tel_no`, `email`) VALUES ('1', 'Ravana', 'King', '00123344334V', 'Paralova', '0000000000', 'ravana@ravana.lk');
+   
+   CREATE TABLE `vms`.`visiting_requests` (
+   `request_id` INT NOT NULL,
+   `visitors_id` INT NOT NULL,
    `purpose` VARCHAR(50) NOT NULL,
    `visiting_date` DATE NOT NULL,
    `from` TIME NOT NULL,
    `to` TIME NOT NULL,
    `to_meet` VARCHAR(30),
    `visiting_places` VARCHAR(50),
+   `bringing_vehicle` BOOLEAN NOT NULL,
    `status` VARCHAR(15) NOT NULL,
-   PRIMARY KEY (`visitors_id`),
-   KEY (`NIC`)
-   );
-   INSERT INTO `vms`.`visitors` (`visitors_id`, `first_name`, `last_name`, `NIC`, `address`, `tel_no`, `email`, `purpose`, `visiting_date`, `from`, `to`, `status`) VALUES ('1', 'Ravana', 'King', '00123344334V', 'Paralova', '0000000000', 'ravana@ravana.lk', 'nidagena aharuna', '2020-12-23', '12:30', '13:30', 'Approved');
+   PRIMARY KEY (`request_id`),
+   FOREIGN KEY (`visitors_id`) REFERENCES `vms`.`visitors` (`visitors_id`)
+   ); 
+   INSERT INTO `vms`.`visiting_requests` (`request_id`, `visitors_id`, `purpose`, `visiting_date`, `from`, `to`, `to_meet`, `visiting_places`, `bringing_vehicle`, `status`) VALUES ('1', '1', 'Conqure', '2020-12-26', '13:00', '15:00', 'Yakka puthun', 'Efac', '1', 'Approved');
+
    
    CREATE TABLE `vms`.`vehicles` (
 	`reg_no` VARCHAR(10) NOT NULL,
