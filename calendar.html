@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <!-- Use desktop-hide class for mobile only content -->
+    <!-- Use mobile-hide class for desktop only content -->
+    <header>
+        <!-- Container for logo -->
+        <div class="logo-container">
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="130.98" height="20.7" viewBox="0 0 130.98 20.7"><path class="a" d="M12.93,0l7.71-20.01H15.78L10.26-4.62,4.71-20.01H-.15L7.59,0ZM29.76,0V-20.01H25.5V0ZM43.83.36c5.4,0,8.01-2.76,8.01-6.42,0-7.47-11.49-5.34-11.49-8.52,0-1.2,1.02-2.01,2.85-2.01a8.6,8.6,0,0,1,5.82,2.19l2.37-3.12a11.13,11.13,0,0,0-7.8-2.79c-4.71,0-7.59,2.76-7.59,6.09,0,7.53,11.52,5.1,11.52,8.64,0,1.14-1.14,2.22-3.48,2.22a8.773,8.773,0,0,1-6.36-2.7L35.37-2.82A11.406,11.406,0,0,0,43.83.36ZM61.98,0V-20.01H57.72V0ZM77.85,0V-16.26h5.82v-3.75H67.71v3.75h5.85V0ZM98.16.36A10.054,10.054,0,0,0,108.63-9.99,10.054,10.054,0,0,0,98.16-20.34,10.047,10.047,0,0,0,87.72-9.99,10.047,10.047,0,0,0,98.16.36Zm0-3.78c-3.69,0-6.06-2.85-6.06-6.57,0-3.75,2.37-6.57,6.06-6.57s6.09,2.82,6.09,6.57C104.25-6.27,101.85-3.42,98.16-3.42ZM130.83,0l-4.5-7.62a5.742,5.742,0,0,0,4.38-5.94c0-3.72-2.55-6.45-6.72-6.45h-9.36V0h4.26V-7.11h3.12L125.94,0Zm-7.47-10.86h-4.47v-5.4h4.47a2.717,2.717,0,0,1,3,2.7A2.717,2.717,0,0,1,123.36-10.86Z" transform="translate(0.15 20.34)"/></svg>
+            </a>
+        </div>
+        <!-- Navigation Bar -->
+        <nav class="mobile-hide">
+            <ul class="nav-links">
+                <li><a class="nav-link" href="dashboard.html">DASHBOARD</a></li>
+                <li><a class="nav-link" href="visitors.html">VISITORS</a></li>
+                <li><a class="nav-link" href="appointments.html">APPOINTMENTS</a></li>
+                <li><a class="nav-link-active" href="calendar.html">CALENDAR</a></li>
+                <li><a class="nav-link" href="messages.html">MESSAGES</a></li>
+            </ul>
+        </nav>
+        <!-- Right Control Panel (Has Add Visitor button, View Messages button, View Notifications button, View Profile Button) -->
+        <div class="nav-right mobile-hide">
+            <!-- Use 'action-btn' class for other buttons also -->
+            <div class="action-btn">
+                <a href="#" id="add-visitor">ADD VISITOR</a>
+            </div>
+            <div class="messages">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="19" viewBox="0 0 512 390"><g transform="translate(0 -61)"><path d="M467,61H45A45.077,45.077,0,0,0,0,106V406a45.073,45.073,0,0,0,45,45H467a45.073,45.073,0,0,0,45-45V106A45.073,45.073,0,0,0,467,61Zm-6.214,30L256.954,294.833,51.359,91ZM30,399.788V112.069l144.479,143.24ZM51.213,421l144.57-144.57,50.657,50.222a15,15,0,0,0,21.167-.046L317,277.213,460.787,421ZM482,399.787,338.213,256,482,112.212Z"/></g></svg>
+            </div>
+            <div class="notifications">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" viewBox="0 0 25 31.595"><path d="M77.918,25.143a4.909,4.909,0,0,1-1.492-2.031c-1.285-2.72-1.555-6.552-1.555-9.288,0-.012,0-.024,0-.036a8.964,8.964,0,0,0-5.277-8.13V3.52A3.521,3.521,0,0,0,66.08,0h-.291a3.521,3.521,0,0,0-3.514,3.52V5.658A8.965,8.965,0,0,0,57,13.824c0,2.736-.27,6.568-1.555,9.288a4.909,4.909,0,0,1-1.492,2.031.9.9,0,0,0-.494,1.023.942.942,0,0,0,.928.723h6.785a4.766,4.766,0,0,0,9.531,0h6.785a.942.942,0,0,0,.928-.723A.9.9,0,0,0,77.918,25.143ZM64.126,3.52a1.666,1.666,0,0,1,1.663-1.665h.291A1.666,1.666,0,0,1,67.742,3.52V5.057a8.965,8.965,0,0,0-3.616,0V3.52ZM65.934,29.74a2.921,2.921,0,0,1-2.914-2.85h5.828A2.921,2.921,0,0,1,65.934,29.74Zm3.727-4.7H56.494a9.7,9.7,0,0,0,.485-.851c1.241-2.446,1.87-5.932,1.87-10.36a7.085,7.085,0,1,1,14.171,0c0,.011,0,.023,0,.034,0,4.41.633,7.884,1.87,10.323a9.71,9.71,0,0,0,.485.851Z" transform="translate(-53.434 0)"/></svg>
+            </div>
+            <div class="profile">
+                <button><img src="img/profile_pic.svg" alt=""></button>
+                <ul>
+                    <li><a href="#">PROFILE</a></li>
+                    <li><a href="#">EXTENSIONS</a></li>
+                    <li><a href="#">SETTINGS</a></li>
+                    <li><a href="#">LOGOUT</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Hamburger Menu (Only for Mobile View) -->
+        <div class="burger desktop-hide">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25.426" height="19.043" viewBox="0 0 25.426 19.043"><defs><style>.a{fill:#646d82;}</style></defs><g transform="translate(0 -64.267)"><path class="a" d="M23.086,64.267H2.34a2.341,2.341,0,0,0,0,4.681H23.086a2.341,2.341,0,0,0,0-4.681Z"/><path class="a" d="M23.086,208.867H2.34a2.341,2.341,0,0,0,0,4.681H23.086a2.341,2.341,0,0,0,0-4.681Z" transform="translate(0 -137.419)"/><path class="a" d="M23.086,353.467H2.34a2.341,2.341,0,0,0,0,4.681H23.086a2.341,2.341,0,0,0,0-4.681Z" transform="translate(0 -274.838)"/></g></svg>
+        </div>
+    </header>
+    <!-- Used for the header background -->
+    <div class="nav-cover"></div>
+
+    <main>
+        <!-- Remove this and add content inside a main, section or a div container -->
+    </main>
+</body>
+</html>
