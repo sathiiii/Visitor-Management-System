@@ -72,7 +72,7 @@ CREATE TABLE `vms`.`visitors` (
    PRIMARY KEY (`request_id`),
    FOREIGN KEY (`visitors_id`) REFERENCES `vms`.`visitors` (`visitors_id`)
    ); 
-   INSERT INTO `vms`.`visiting_requests` (`request_id`, `visitors_id`, `purpose`, `visiting_date`, `from`, `to`, `to_meet`, `visiting_places`, `bringing_vehicle`, `status`) VALUES ('1', '1', 'Conqure', '2020-12-26', '13:00', '15:00', 'Yakka puthun', 'Efac', '1', 'Approved');
+   -- INSERT INTO `vms`.`visiting_requests` (`request_id`, `visitors_id`, `purpose`, `visiting_date`, `from`, `to`, `to_meet`, `visiting_places`, `bringing_vehicle`, `status`) VALUES ('1', '1', 'Conqure', '2020-12-26', '13:00', '15:00', 'Yakka puthun', 'Efac', '1', 'Approved');
 
    
    CREATE TABLE `vms`.`vehicles` (
@@ -84,4 +84,4 @@ CREATE TABLE `vms`.`visitors` (
     PRIMARY KEY (`reg_no`),
     FOREIGN KEY (`visitors_id`) REFERENCES `vms`.`visitors` (`visitors_id`)
    );
-   INSERT INTO `vms`.`vehicles` (`reg_no`, `visitors_id`, `model_name`, `color`, `type`) VALUES ('DDD 6969', '1', 'Dandumonare', 'Unknown', 'Plane');
+  -- INSERT INTO `vms`.`vehicles` (`reg_no`, `visitors_id`, `model_name`, `color`, `type`) VALUES ('DDD 6969', '1', 'Dandumonare', 'Unknown', 'Plane');

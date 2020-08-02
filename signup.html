@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Register Form</title>
+    </head>
+    <body>
+        <form action="insert.php" method="POST">
+            <table>
+                <tr>
+                    <td><input type="text" name="first_name" placeholder="First Name" colspan="2" align="center" required></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="last_name" placeholder="Last Name" colspan="2" align="center" required></td>
+                </tr>
+                <tr>
+                    <td><input type="password" name="password" id='password' class="pass" placeholder="Password" required></td>
+                    <td><input type="checkbox" onclick="passFunc('password')">Show Password</td>
+                </tr>
+                <tr>
+                    <td><input type="password" name="confirm_password" id='confirm_password' class="pass" placeholder="Confirm Password" colspan="2" align="center" required></td>
+                    <td><input type="checkbox" onclick="passFunc('confirm_password')">Show Password</td>
+                </tr>
+                <tr>
+                    <td><input type="nic" name="NIC" placeholder="NIC" colspan="2" align="center" required></td>
+                </tr>
+                <tr>
+                    <td><input type="address" name="address" placeholder="Address" colspan="2" align="center" required></td>
+                </tr>
+                <tr>
+                    <td><input type="tel_no" name="tel_no" placeholder="Telephone Number" colspan="2" align="center" required></td>
+                </tr>
+                <tr>
+                    <td><input type="email" name="email" placeholder="Email" colspan="2" align="center" required></td>
+                </tr> 
+                <tr>
+                    <td><input type="submit" id='Submit' value="Submit" onclick="validatePassword()"></td>
+                </tr>
+            </table>
+        </form>
+        <script>
+            function passFunc(y) {
+            var x = document.getElementById(y);
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+            }
+            var password = document.getElementById("password"),
+            confirm_password = document.getElementById("confirm_password");
+
+            function validatePassword() {
+            if (password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+            }
+
+            password.onchange = validatePassword;
+            confirm_password.onkeyup = validatePassword;
+
+        </script>
+    </body>
+</html>
+<style>
+    body{
+        display: grid;
+        place-items: center;
+    }
+    
+</style>
