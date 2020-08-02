@@ -1,5 +1,7 @@
 # Visitor-Management-System
 
+Markdown language purudu wenna one nam: https://github.com/tchapi/markdown-cheatsheet/blob/master/README.md
+
 ## TO-DOs (Mathak wen ewa DAAPAAAAN):
 * Design for signup page
 * Content inside each page in main site
