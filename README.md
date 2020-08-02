@@ -9,3 +9,4 @@ Reference page 1: http://softdesigners.co.in/visitor-gatepass-management-system/
 * Design for signup page
 * Content inside each page in main site
 * Login page (PHP + js)
+##sex krnna asai
