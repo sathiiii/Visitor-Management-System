@@ -1,7 +1,9 @@
+// Function to toggle visibility of an element
 function toggle_visibility(id) {
     document.getElementById(id).classList.toggle("show");
   }
 
+// Collapse all open dropdowns when user click outside
 window.onclick = function(event) {
     if (!event.target.matches(".dropbtn")) {
         var dropdowns = document.getElementsByClassName("dropdown");
