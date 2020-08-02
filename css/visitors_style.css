@@ -75,7 +75,7 @@ nav {
 .line {
     transition: 0.3s;
     grid-row: 2/3;
-    grid-column: 1/2;
+    grid-column: 2/3;
     background-color: #199159;
     height: 100%;
     width: 60%;
@@ -92,24 +92,24 @@ nav {
     color: #2CD889;
 }
 
-.nav-link:nth-of-type(2):hover ~ .line {
+.nav-link:nth-of-type(1):hover ~ .line {
     background-color: #29be79;
-    transform: translateX(calc(100% / 6 * 10));
+    transform: translateX(calc(-100% / 6 * 10));
 }
 
 .nav-link:nth-of-type(3):hover ~ .line {
     background-color: #29be79;
-    transform: translateX(calc(100% / 6 * 20));
+    transform: translateX(calc(100% / 6 * 10));
 }
 
 .nav-link:nth-of-type(4):hover ~ .line {
     background-color: #29be79;
-    transform: translateX(calc(100% / 6 * 30));
+    transform: translateX(calc(100% / 6 * 20));
 }
 
 .nav-link:nth-of-type(5):hover ~ .line {
     background-color: #29be79;
-    transform: translateX(calc(100% / 6 * 40));
+    transform: translateX(calc(100% / 6 * 30));
 }
 
 .nav-link {
@@ -341,4 +341,3 @@ body {
         cursor: pointer;
     }
 }
-
