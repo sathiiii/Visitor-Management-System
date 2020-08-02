@@ -6,7 +6,7 @@
 }
 
 body{
-    background-color: #F0FAF8;
+    background-color: #F1FBFF;
     
 }
 
@@ -59,7 +59,7 @@ body{
 }
 
 .admin-button, .admin-button a{
-    background-color: #2CD889;
+    background-color: #2CA9D8;
     border: none;
     color: #ffffff;
 }
@@ -94,7 +94,7 @@ img{
 }
 
 .form-submit a{
-    color: #2CD889;
+    color: #2CA9D8;
     font-family: sans-serif;
 }
 
@@ -136,7 +136,7 @@ img{
     bottom: -1px;
     height: 100%;
     width: 100%;
-    border-bottom: 3px solid #2CD889;
+    border-bottom: 3px solid #2CA9D8;
     transform: translateX(-100%);
     transition:  0.3s ease;
 }
@@ -152,7 +152,7 @@ img{
 .form input:valid + .label-name .content-name{
     transform: translateY(-150%);
     font-size: 14px;
-    color: #2CD889;
+    color: #2CA9D8;
 }
 
 .form-dat input:focus + .label-name::after, .form-dat input:valid + .label-name::after{
