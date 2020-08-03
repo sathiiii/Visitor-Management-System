@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Use this font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/calendar_style.css">
     <link rel="icon" href="img/icon.png">
@@ -12,7 +13,7 @@
 <body>
     <!-- Use desktop-hide class for mobile only content -->
     <!-- Use mobile-hide class for desktop only content -->
-    <header id="header">
+    <header id="header" class="back-blur">
         <!-- Container for logo -->
         <div class="logo-container">
             <a href="index.html">
@@ -47,12 +48,12 @@
             </div>
         </div>
         <!-- Hamburger Menu (Only for Mobile View) -->
-        <div class="burger desktop-hide">
+        <div class="burger desktop-hide" onclick="toggle_visibility('hamburger-menu');">
             <svg xmlns="http://www.w3.org/2000/svg" width="25.426" height="19.043" viewBox="0 0 25.426 19.043"><defs><style>.a{fill:#646d82;}</style></defs><g transform="translate(0 -64.267)"><path class="a" d="M23.086,64.267H2.34a2.341,2.341,0,0,0,0,4.681H23.086a2.341,2.341,0,0,0,0-4.681Z"/><path class="a" d="M23.086,208.867H2.34a2.341,2.341,0,0,0,0,4.681H23.086a2.341,2.341,0,0,0,0-4.681Z" transform="translate(0 -137.419)"/><path class="a" d="M23.086,353.467H2.34a2.341,2.341,0,0,0,0,4.681H23.086a2.341,2.341,0,0,0,0-4.681Z" transform="translate(0 -274.838)"/></g></svg>
         </div>
     </header>
     <!-- Add 'dropdown' class name to all dropdowns -->
-    <div id="dropdown-profile" class="dropdown">
+    <div id="dropdown-profile" class="dropdown back-blur">
         <div class="dropdown-header">
             <p>Signed in as <b>admin</b></p>
             <div role="none" class="dropdown-divider"></div>
@@ -76,11 +77,18 @@
             </li>
         </ul>
     </div>
+    <div id="hamburger-menu" class="menu back-blur desktop-hide">
+        
+    </div>
     <!-- Used for the header background -->
     <div class="nav-cover"></div>
 
     <main>
         <!-- Remove this and add content inside a main, section or a div container -->
     </main>
+
+    <footer>
+
+    </footer>
 </body>
 </html>
