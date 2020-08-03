@@ -2,170 +2,85 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    
+    font-family: 'Poppins', sans-serif;
 }
 
 body{
     background-color: #F0FAF8;
-    
 }
 
-.log-type{
-    box-sizing: border-box;
-    height: 80vh;
+.container{
+    transform: scale(0.9, 0.9);
+    height: calc(100vh - 300px);
+    margin: 150px 0 150px 0;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    width: 410px;
-    margin: auto;
-    margin-top: 100px;
-    border-radius: 6px;
+    justify-content: space-around;
 }
 
-.log-type svg{
+.action-btn a {
+    display: block;
+    text-align: center;
+    line-height: 58px;
+    text-decoration: none;
+    color: white;
+}
+
+.action-btn {
+    display: block;
+    background-color: #2CD889;
+    width: 300px;
+    height: 58px;
+    border-radius: 6px;
+    transition: 0.3s;
+    margin: 22px 0 22px 0;
+}
+
+.action-btn:hover {
+    background-color: #29be79;
+}
+
+.signup {
+    background-color: transparent;
+    border: solid 1px #2CA9D8;
+}
+
+.signup:hover {
+    background-color: #2CA9D8;
+}
+
+.signup:hover a {
+    color: white;
+}
+
+.signup a {
+    color: #2CA9D8;
+}
+
+.login-visitor {
+    background-color: #2CA9D8;
+}
+
+.login-visitor:hover {
+    background-color: #2792b9;
+}
+
+.login-header {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 200;
+    color: #646d82;
+    margin-bottom: 80px;
+}
+
+.panel {
+    height: 218px;
+}
+
+.login-header svg{
     fill: #646d82;
     width: 364.98px;
     height: 57.68px;
 }
-
-.log-type p{
-    font-family: sans-serif;
-    font-size: 20px;
-    font-weight: 100;
-    color: #646d82;
-}
-
-.log-type button{
-    width: 300px;
-    height: 58px;
-    font-size: 20px;
-    border-radius: 6px;
-    outline: none;
-}
-
-.log-type a{
-    text-decoration: none;
-}
-
-.visitor-button, .visitor-button a{
-    background: transparent;
-    border-color: #2CA9D8;
-    color: #2CA9D8;
-}
-
-.visitor-button{
-    border-style: solid ;
-}
-
-.admin-button, .admin-button a{
-    background-color: #2CD889;
-    border: none;
-    color: #ffffff;
-}
-
-.visitorlog-button, .visitorlog-button a{
-    background-color: #2CA9D8;
-    border: none;
-    color: #ffffff;
-}
-
-img{
-    width: 450px;
-    position: relative;
-}
-
-.form{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 20vh;
-    width: 70%;
-    position: relative;
-    overflow: hidden;
-}
-
-.form-submit{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 30vh;
-    align-items: center;
-}
-
-.form-submit a{
-    color: #2CD889;
-    font-family: sans-serif;
-}
-
-.form-dat{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    position: relative;
-}
-
-.form-dat input{
-    width: 100%;
-    height: 100%;
-    color: #595f6e;
-    padding-top: 20px;
-    border: none;
-    outline: none;
-    background: none;
-    font-family: sans-serif;
-    font-size: 18px;
-}
-
-.form-dat label{
-    position: absolute;
-    bottom: 0px;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    border-bottom: 1px solid #595f6e;
-    font-family: sans-serif;
-    color: #646d82;
-}
-
-.form-dat label::after{
-    content: "";
-    position: absolute;
-    left: 0px;
-    bottom: -1px;
-    height: 100%;
-    width: 100%;
-    border-bottom: 3px solid #2CD889;
-    transform: translateX(-100%);
-    transition:  0.3s ease;
-}
-
-.content-name{
-    position: absolute;
-    bottom: 5px;
-    left: 0px;
-    transition: all 0.3s ease;
-}
-
-.form input:focus + .label-name .content-name,
-.form input:valid + .label-name .content-name{
-    transform: translateY(-150%);
-    font-size: 14px;
-    color: #2CD889;
-}
-
-.form-dat input:focus + .label-name::after, .form-dat input:valid + .label-name::after{
-    transform: translateX(0%);
-}
-
-.form-rem{
-    width: 70%;
-    display: flex;
-    justify-content: left;
-    font-family: sans-serif;
-    color: #646D82;
-}
-
-
-
