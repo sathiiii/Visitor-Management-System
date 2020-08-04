@@ -39,13 +39,13 @@ CREATE TABLE `vms`.`staff` (
 CREATE TABLE `vms`.`admins` (
   `admin_id` INT NOT NULL AUTO_INCREMENT,
   `staff_id` INT NOT NULL,
-  `ortharization` VARCHAR(50) NOT NULL,
+  `authorization` VARCHAR(50) NOT NULL,
   `username` VARCHAR(30),
   PRIMARY KEY (`admin_id`),
   FOREIGN KEY (`staff_id`) REFERENCES `vms`.`staff` (`staff_id`) ON UPDATE CASCADE
 );
--- INSERT INTO `vms`.`admins` (`admin_id`, `staff_id`, `ortharization`) VALUES ('1', '3', 'Full');
--- INSERT INTO `vms`.`admins` (`admin_id`, `staff_id`, `ortharization`) VALUES ('2', '1', 'Faculty Only');
+-- INSERT INTO `vms`.`admins` (`admin_id`, `staff_id`, `authorization`) VALUES ('1', '3', 'Full');
+-- INSERT INTO `vms`.`admins` (`admin_id`, `staff_id`, `authorization`) VALUES ('2', '1', 'Faculty Only');
 
 CREATE TABLE `vms`.`visitors` (
    `visitors_id` INT NOT NULL AUTO_INCREMENT,
