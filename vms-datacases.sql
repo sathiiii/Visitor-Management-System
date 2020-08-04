@@ -24,6 +24,7 @@ CREATE TABLE `vms`.`staff` (
   
   CREATE TABLE `vms`.`students` (
   `reg_no` VARCHAR(20) NOT NULL,
+  `username` VARCHAR(20) NOT NULL,
   `first_name` VARCHAR(20) NOT NULL,
   `last_name` VARCHAR(20) NOT NULL,
   `department` VARCHAR(45) NULL,
@@ -49,6 +50,7 @@ CREATE TABLE `vms`.`admins` (
 
 CREATE TABLE `vms`.`visitors` (
    `visitors_id` INT NOT NULL AUTO_INCREMENT,
+   `username` VARCHAR(20) NOT NULL,
    `first_name` VARCHAR(20) NOT NULL,
    `last_name` VARCHAR(20) NOT NULL,
    `NIC` VARCHAR(20) NOT NULL,
