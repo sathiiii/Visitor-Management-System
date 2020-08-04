@@ -7,7 +7,7 @@ Reference page 1: http://softdesigners.co.in/visitor-gatepass-management-system/
 
 ## TO-DOs (Mathak wena ewa DAAPAAAAN):
 * Dashboard eke widgets tika welaawak thiyenawanam balapan kawruhari (@shamal + @dinura + @sathira)
-* ~~Design for signup page~~ (meka heta karannam)
+* ~~Design for signup page~~ (meka ada karannam)
 * Content inside each page in main site
 * Login pages (PHP + js) (@shamal)
 
