@@ -10,39 +10,42 @@ CREATE TABLE `vms`.`staff` (
   `staff_id` INT NOT NULL,
   `first_name` VARCHAR(20) NOT NULL,
   `last_name` VARCHAR(20) NOT NULL,
-  `facutly` VARCHAR(45) NOT NULL,
   `department` VARCHAR(45) NULL,
   `address` VARCHAR(70) NOT NULL,
   `phone_no` VARCHAR(10) NULL,
   `email` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(40) NOT NULL,
+  `profile_pic` VARCHAR(255),
   PRIMARY KEY (`staff_id`));
-INSERT INTO `vms`.`staff` (`staff_id`, `first_name`, `last_name`, `facutly`, `department`, `address`, `email`) VALUES ('1', 'Roshan', 'Ragel', 'ENG', 'COMP', 'Kandy', 'r@pdn.ac.lk');
-INSERT INTO `vms`.`staff` (`staff_id`, `first_name`, `last_name`, `facutly`, `department`, `address`, `email`) VALUES ('2', 'Janaka', 'Wijayakulasooriya', 'ENG', 'EE', 'Kandy', 'j@pdn.ac.lk');
-INSERT INTO `vms`.`staff` (`staff_id`, `first_name`, `last_name`, `facutly`, `department`, `address`, `email`) VALUES ('3', 'Dammika', 'Elkaduwa', 'ENG', 'COMP', 'Kandy', 'd@pdn.ac.lk');
+-- INSERT INTO `vms`.`staff` (`staff_id`, `first_name`, `last_name`, `department`, `address`, `email`) VALUES ('1', 'Roshan', 'Ragel',  'COMP', 'Kandy', 'r@pdn.ac.lk');
+-- INSERT INTO `vms`.`staff` (`staff_id`, `first_name`, `last_name`, `department`, `address`, `email`) VALUES ('2', 'Janaka', 'Wijayakulasooriya',  'EE', 'Kandy', 'j@pdn.ac.lk');
+-- INSERT INTO `vms`.`staff` (`staff_id`, `first_name`, `last_name`, `department`, `address`, `email`) VALUES ('3', 'Dammika', 'Elkaduwa',  'COMP', 'Kandy', 'd@pdn.ac.lk');
 
   
   CREATE TABLE `vms`.`students` (
   `reg_no` VARCHAR(20) NOT NULL,
   `first_name` VARCHAR(20) NOT NULL,
   `last_name` VARCHAR(20) NOT NULL,
-  `facutly` VARCHAR(45) NOT NULL,
   `department` VARCHAR(45) NULL,
   `address` VARCHAR(70) NOT NULL,
   `phone_no` VARCHAR(10) NULL,
   `email` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(40) NOT NULL,
+  `profile_pic` VARCHAR(255),
     PRIMARY KEY (`reg_no`));
-INSERT INTO `vms`.`students` (`reg_no`, `first_name`, `last_name`, `facutly`, `department`, `address`, `email`) VALUES ('E/17/072', 'Dinura', 'Dissanayake', 'ENG', 'COMP', 'Colombo', 'e17072@eng.pdn.ac.lk');
-INSERT INTO `vms`.`students` (`reg_no`, `first_name`, `last_name`, `facutly`, `department`, `address`, `phone_no`, `email`) VALUES ('W/17/334', 'Donald', 'Trump', 'ART', 'POL', 'America', '1234456786', 'Danne naa');
+-- INSERT INTO `vms`.`students` (`reg_no`, `first_name`, `last_name`,  `department`, `address`, `email`) VALUES ('E/17/072', 'Dinura', 'Dissanayake',  'COMP', 'Colombo', 'e17072@eng.pdn.ac.lk');
+-- INSERT INTO `vms`.`students` (`reg_no`, `first_name`, `last_name`,  `department`, `address`, `phone_no`, `email`) VALUES ('W/17/334', 'Donald', 'Trump',  'POL', 'America', '1234456786', 'Danne naa');
 
 CREATE TABLE `vms`.`admins` (
   `admin_id` INT NOT NULL AUTO_INCREMENT,
   `staff_id` INT NOT NULL,
   `ortharization` VARCHAR(50) NOT NULL,
+  `username` VARCHAR(30),
   PRIMARY KEY (`admin_id`),
   FOREIGN KEY (`staff_id`) REFERENCES `vms`.`staff` (`staff_id`) ON UPDATE CASCADE
 );
-INSERT INTO `vms`.`admins` (`admin_id`, `staff_id`, `ortharization`) VALUES ('1', '3', 'Full');
-INSERT INTO `vms`.`admins` (`admin_id`, `staff_id`, `ortharization`) VALUES ('2', '1', 'Faculty Only');
+-- INSERT INTO `vms`.`admins` (`admin_id`, `staff_id`, `ortharization`) VALUES ('1', '3', 'Full');
+-- INSERT INTO `vms`.`admins` (`admin_id`, `staff_id`, `ortharization`) VALUES ('2', '1', 'Faculty Only');
 
 CREATE TABLE `vms`.`visitors` (
    `visitors_id` INT NOT NULL AUTO_INCREMENT,
@@ -53,6 +56,7 @@ CREATE TABLE `vms`.`visitors` (
    `tel_no` VARCHAR(10) NOT NULL,
    `email` VARCHAR(30) NOT NULL,
    `password` VARCHAR(40) NOT NULL,
+   `profile_pic` VARCHAR(255),
    PRIMARY KEY (`visitors_id`),
    KEY (`NIC`)
    );
