@@ -12,6 +12,7 @@ Reference page 1: http://softdesigners.co.in/visitor-gatepass-management-system/
 * Login pages (PHP + js) (@shamal)
 
 ## Updates:
+* Finished styling login, login_admin and login_guest
 * Files tika clone karala sex karaganilla
 
 ## NOTES:
