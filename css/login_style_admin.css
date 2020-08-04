@@ -14,7 +14,7 @@ body{
     font-size: 20px;
     font-weight: 200;
     color: #646d82;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .login-header svg{
@@ -42,11 +42,14 @@ body{
     text-decoration: none;
     color: white;
     font-size: 17px;
+    transition: 0.3s;
 }
 
 .action-btn {
+    transform: scale(0.85, 0.85);
     display: block;
-    background-color: #2CD889;
+    background-color: #9ca7a2;
+    pointer-events: none;
     width: 300px;
     height: 58px;
     border-radius: 6px;
@@ -54,23 +57,24 @@ body{
     margin: 22px 0 22px 0;
 }
 
-.action-btn:hover {
+.action-btn:hover a {
     background-color: #29be79;
+    border-radius: 6px;
+}
+
+.action-btn:active a {
+    background-color: #218d5a;
+    border-radius: 6px;
 }
 
 .textboxes {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 18vh;
+    height: 20vh;
     width: 70%;
     position: relative;
     overflow: hidden;
-}
-
-.form-submit {
-    height: 146px;
-    transform: scale(0.85, 0.85);
 }
 
 .textbox {
@@ -154,5 +158,26 @@ body{
 }
 
 #back:hover, #forgot-password {
+    text-decoration: underline;
+}
+
+#warnings {
+    font-size: 12px;
+    color: red;
+    display: none;
+}
+
+#redirect {
+    color: #404653;
+    display: none;
+}
+
+#redirect a {
+    font-size: 15px;
+    text-decoration: none;
+    color: #2CA9D8;
+}
+
+#redirect a:hover {
     text-decoration: underline;
 }

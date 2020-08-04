@@ -5,29 +5,33 @@
     box-sizing: border-box;
 }
 
+.back-blur {
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    backdrop-filter: blur(20px) saturate(150%);
+    background-color: rgba(255,255,255,0.7);
+    z-index: 100;
+    position: fixed;
+}
+
+/* Pseudo element for the background blur */
+.back-blur::after {
+    content: "";
+    top: 0;
+    background-image: url("/img/rectangle.svg");
+    position: absolute;
+    background-position: center;
+    z-index: -1;  
+}
+
 /* Fixed header */
 header {
-    position: fixed;
     width: 100%;
-    z-index: 100;
     font-size: 14px;
     display: flex;
     flex-direction: row;
     height: 80px;
     padding: 0 1rem 0 1rem;
     align-items: center;
-    -webkit-backdrop-filter: blur(20px) saturate(150%);
-    backdrop-filter: blur(20px) saturate(150%);
-}
-
-/* Pseudo element for the background blur */
-header::after {
-    content: "";
-    top: 0;
-    background-image: url("/img/BG.svg");
-    position: absolute;
-    background-position: center;
-    z-index: -1;  
 }
 
 .active {
@@ -202,17 +206,13 @@ nav {
 
 .dropdown {
     padding: 10px 0 10px 0;
-    position: fixed;
     align-items: center;
-    -webkit-backdrop-filter: blur(10px) saturate(150%);
-    backdrop-filter: blur(10px) saturate(150%);
     border-radius: 5px;
     box-shadow:
         0 -3px 50px rgba(0, 0, 0, 0.1),
         0 6px 5px rgba(0, 0, 0, 0.05),
         0 12px 10px rgba(0, 0, 0, 0.05),
         0 10px 18px rgba(0, 0, 0, 0.07);
-    z-index: 100;
     display: none;
 }
 
@@ -223,17 +223,10 @@ nav {
 .dropdown::after {
     content: "";
     border-radius: 5px;
-    height: 100%;
-    width: 100%;
-    top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: -1;
     opacity: 0.5;
-    position: absolute;
-    background-image: url("/img/rectangle.svg");
-    background-position: center;
 }
 
 #dropdown-profile::before {
@@ -355,6 +348,24 @@ body {
         margin-right: 10px;
         order: 2;
         cursor: pointer;
+    }
+
+    #hamburger-menu {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+    }
+
+    #hamburger-menu::after {
+        content: "";
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0.2;
+    }
+
+    .menu {
+        display: none;
     }
 }
 
