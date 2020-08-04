@@ -46,7 +46,7 @@ body{
 
 .action-btn {
     display: block;
-    background-color: #2CA9D8;
+    background-color: #2CD889;
     width: 300px;
     height: 58px;
     border-radius: 6px;
@@ -55,24 +55,7 @@ body{
 }
 
 .action-btn:hover {
-    background-color: #2792b9;
-}
-
-.signup {
-    background-color: transparent;
-    border: solid 1px #2CA9D8;
-}
-
-.signup:hover {
-    background-color: #2CA9D8;
-}
-
-.signup:hover a {
-    color: white;
-}
-
-.signup a {
-    color: #2CA9D8;
+    background-color: #29be79;
 }
 
 .textboxes {
@@ -126,7 +109,7 @@ body{
     bottom: -1px;
     height: 100%;
     width: 100%;
-    border-bottom: 3px solid #2CA9D8;
+    border-bottom: 3px solid #2CD889;
     transform: translateX(-100%);
     transition:  0.3s ease;
 }
@@ -142,7 +125,7 @@ body{
 .textboxes input:valid + .label-name .content-name{
     transform: translateY(-150%);
     font-size: 14px;
-    color: #2CA9D8;
+    color: #2CD889;
 }
 
 .textbox input:focus + .label-name::after, .textbox input:valid + .label-name::after{
@@ -167,7 +150,7 @@ body{
 
 #back, #forgot-password {
     text-decoration: none;
-    color: #2CA9D8;
+    color: #2CD889;
 }
 
 #back:hover, #forgot-password {

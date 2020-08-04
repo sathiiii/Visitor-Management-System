@@ -26,6 +26,7 @@ body{
     line-height: 58px;
     text-decoration: none;
     color: white;
+    font-size: 17px;
 }
 
 .action-btn {
@@ -72,11 +73,12 @@ body{
     font-size: 20px;
     font-weight: 200;
     color: #646d82;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
 }
 
 .panel {
     height: 218px;
+    transform: scale(0.9, 0.9);
 }
 
 .login-header svg{
