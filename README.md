@@ -15,6 +15,7 @@ Reference page 1: http://softdesigners.co.in/visitor-gatepass-management-system/
 * Files tika clone karala sex karaganilla
 
 ## NOTES:
+* **Friends files push karaddi hari folder ekata push karanna amarui natthan** 😁
 * Action buttons hadaddi div ekak hadala karapiyaw: style.css eke thyenawa action-btn class eka eka copy-paste karannai thyenne
 * Element ekakata background blur onenam back-blur kyala class ekak hadala thyenneh index.html eke. Eke style eka ussapan
 * Sex
