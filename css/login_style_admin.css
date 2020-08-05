@@ -25,9 +25,9 @@ body{
 
 .container {
     transform: scale(0.9, 0.9);
-    height: calc(100vh - 100px);
+    height: calc(100vh - 80px);
     width: 410px;
-    margin: 50px auto 50px auto;
+    margin: 40px auto 40px auto;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -71,7 +71,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 20vh;
+    height: 24vh;
     width: 70%;
     position: relative;
     overflow: hidden;
