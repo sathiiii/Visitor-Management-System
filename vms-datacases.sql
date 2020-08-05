@@ -17,7 +17,7 @@ CREATE TABLE `vms`.`staff` (
   `password` VARCHAR(40) NOT NULL,
   `profile_pic` VARCHAR(255),
   PRIMARY KEY (`staff_id`));
--- INSERT INTO `vms`.`staff` (`staff_id`, `first_name`, `last_name`, `department`, `address`, `email`) VALUES ('1', 'Roshan', 'Ragel',  'COMP', 'Kandy', 'r@pdn.ac.lk');
+INSERT INTO `vms`.`staff` (`staff_id`, `first_name`, `last_name`, `department`, `address`, `email`, `password`, `profile_pic`) VALUES ('1', 'Roshan', 'Ragel',  'COMP', 'Kandy', 'r@pdn.ac.lk', 'password', '');
 -- INSERT INTO `vms`.`staff` (`staff_id`, `first_name`, `last_name`, `department`, `address`, `email`) VALUES ('2', 'Janaka', 'Wijayakulasooriya',  'EE', 'Kandy', 'j@pdn.ac.lk');
 -- INSERT INTO `vms`.`staff` (`staff_id`, `first_name`, `last_name`, `department`, `address`, `email`) VALUES ('3', 'Dammika', 'Elkaduwa',  'COMP', 'Kandy', 'd@pdn.ac.lk');
 
@@ -41,11 +41,11 @@ CREATE TABLE `vms`.`admins` (
   `admin_id` INT NOT NULL AUTO_INCREMENT,
   `staff_id` INT NOT NULL,
   `authorization` VARCHAR(50) NOT NULL,
-  `username` VARCHAR(30),
+  `username` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`admin_id`),
   FOREIGN KEY (`staff_id`) REFERENCES `vms`.`staff` (`staff_id`) ON UPDATE CASCADE
 );
--- INSERT INTO `vms`.`admins` (`admin_id`, `staff_id`, `authorization`) VALUES ('1', '3', 'Full');
+INSERT INTO `vms`.`admins` (`admin_id`, `staff_id`, `authorization`, `username`) VALUES ('1', '1', 'Full', 'admin1');
 -- INSERT INTO `vms`.`admins` (`admin_id`, `staff_id`, `authorization`) VALUES ('2', '1', 'Faculty Only');
 
 CREATE TABLE `vms`.`visitors` (
@@ -62,7 +62,7 @@ CREATE TABLE `vms`.`visitors` (
    PRIMARY KEY (`visitors_id`),
    KEY (`NIC`)
    );
-   INSERT INTO `vms`.`visitors` (`visitors_id`, `first_name`, `last_name`, `NIC`, `address`, `tel_no`, `email`, `password`) VALUES ('1', 'Ravana', 'King', '00123344334V', 'Paralova', '0000000000', 'ravana@ravana.lk', 'seetha123');
+   -- INSERT INTO `vms`.`visitors` (`visitors_id`, `username`, `first_name`, `last_name`, `NIC`, `address`, `tel_no`, `email`, `password`) VALUES ('1', 'rava123', 'Ravana', 'King', '00123344334V', 'Paralova', '0000000000', 'ravana@ravana.lk', 'seetha123');
    
    CREATE TABLE `vms`.`visiting_requests` (
    `request_id` INT NOT NULL AUTO_INCREMENT,

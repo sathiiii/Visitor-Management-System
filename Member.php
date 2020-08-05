@@ -16,26 +16,27 @@ class Member
         $this->ds = new DataSource();
     }
 
-    function getMemberById($adminId, $tablename)
+    function getMemberById($memberId, $tablename, $idName)
     {
-        $query = "select * FROM $tablename WHERE admin_id = ?";
+        $query = "SELECT * FROM $tablename WHERE $idName = ?";
         $paramType = "i";
         $paramArray = array($memberId);
         $memberResult = $this->ds->select($query, $paramType, $paramArray);
         
         return $memberResult;
     }
-    
-    public function processLogin($username, $password, $tablename) {
-        $passwordHash = md5($password);
-        $query = "select * FROM $tablename WHERE user_name = ? AND password = ?";
+
+    public function processAdminLogin($username, $password) {
+        $query = "SELECT * FROM admins, staff WHERE admins.username = ? AND staff.password = ?";
         $paramType = "ss";
-        $paramArray = array($username, $passwordHash);
+        $paramArray = array($username, $password);
         $memberResult = $this->ds->select($query, $paramType, $paramArray);
         if(!empty($memberResult)) {
-            $_SESSION["userId"] = $memberResult[0]["id"];
+            $_SESSION["adminId"] = $memberResult[0]["staff_id"];
             return true;
         }
+        \setcookie("error", "1");
+        \setcookie("username", "$username");
     }
 }
 ?>

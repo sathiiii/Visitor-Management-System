@@ -3,7 +3,7 @@ namespace VMS;
 
 class DataSource
 {
-    const HOST = 'localhost';
+    const HOST = 'localhost:3306';
     const USERNAME = 'root';
     const PASSWORD = '';
     const DATABASENAME = 'vms';
@@ -20,6 +20,7 @@ class DataSource
         $conn = new \mysqli(self::HOST, self::USERNAME, self::PASSWORD, self::DATABASENAME);
         if (mysqli_connect_errno()) {
             trigger_error("Problem with connecting to database.");
+            echo "Error";
         }
         $conn->set_charset("utf8");
         return $conn;
@@ -39,7 +40,6 @@ class DataSource
         if(!empty($paramType) && !empty($paramArray)) {
             $this->bindQueryParams($stmt, $paramType, $paramArray);
         }
-        
         $stmt->execute();
         $result = $stmt->get_result();
         
