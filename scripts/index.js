@@ -1,3 +1,5 @@
+var username = "<?php echo $username ?>";
+
 function toggle_visibility(id) {
     document.getElementById(id).classList.toggle("show");
   }
