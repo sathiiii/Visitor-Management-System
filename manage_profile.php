@@ -8,10 +8,16 @@ session_start();
 if (!empty($_SESSION["adminId"])) {
     require_once "Member.php";
     $admin = new Member();
-    $adminResult = $admin->getAdminById($_SESSION["adminId"], "admins", "staff_id");
+    $adminResult = $admin->getAdminById($_SESSION["adminId"]);
 }
 
+$departments = array("COMP" => "Computer Engineering", "MECH" => "Mechanical Engineering");
+
 $username = $adminResult[0]["username"];
+$firstname = $adminResult[0]["first_name"];
+$lastname = $adminResult[0]["last_name"];
+$fullname = ucfirst($firstname) . " " . ucfirst($lastname);
+$department = $departments[$adminResult[0]["department"]];
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +27,7 @@ $username = $adminResult[0]["username"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Use this font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/manage_profile_style.css">
     <link rel="icon" href="img/icon.png">
     <script src="scripts/index.js"></script>
     <title>Dashboard</title>
@@ -106,17 +112,44 @@ $username = $adminResult[0]["username"];
     <!-- Used for the header background -->
     <div class="nav-cover"></div>
 
-    <!-- Meh widgets tika welaawak thyenawanam sex krapn kawruhari =) -->
     <main>
-        <div id="appointment-stats" class="widget"></div>
-        <div id="visitor-stats" class="widget"></div>
-        <div id="approved-stats" class="widget"></div>
-        <div id="rejected-stats" class="widget"></div>
-        <div id="w1" class="widget"></div>
-        <div id="w2" class="widget"></div>
-        <div id="w3" class="widget"></div>
-        <div id="w4" class="widget"></div>
-        <div id="w5" class="widget"></div>
+        <h1>Manage Profile</h1>
+        <form action="admin_update.php" method="POST" enctype="multipart/form-data" id="update-profile">
+            <div class="admin-info">
+                <div class="upload-profile-image">
+                    <div class="text-center">
+                        <div class="camera">
+                            <svg class="camera-icon" enable-background="new 0 0 488.455 488.455" height="512" viewBox="0 0 488.455 488.455" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m287.396 216.317c23.845 23.845 23.845 62.505 0 86.35s-62.505 23.845-86.35 0-23.845-62.505 0-86.35 62.505-23.845 86.35 0"/><path d="m427.397 91.581h-42.187l-30.544-61.059h-220.906l-30.515 61.089-42.127.075c-33.585.06-60.925 27.429-60.954 61.029l-.164 244.145c0 33.675 27.384 61.074 61.059 61.074h366.338c33.675 0 61.059-27.384 61.059-61.059v-244.236c-.001-33.674-27.385-61.058-61.059-61.058zm-183.177 290.029c-67.335 0-122.118-54.783-122.118-122.118s54.783-122.118 122.118-122.118 122.118 54.783 122.118 122.118-54.783 122.118-122.118 122.118z"/></svg>
+                        </div>
+                        <img id="profile-picture" src="img/profile_pic.svg" alt="" style="width: 200px; height: 200px;">
+                        <small class="form-text">Choose Image</small>
+                        <input type="file" class="form-control-file" name="profile-upload" id="upload-profile">
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="essential">
+                        <div class="inline-info">
+                            <h3>Prof. <?php echo $fullname ?></h3>
+                            <div class="admin-type">
+                                <p>STAFF</p>
+                            </div>
+                        </div>
+                        <p>Senior Lecturer</p>
+                        <div class="status-label">
+                            <div class="status-led"></div>
+                            <p>ACTIVE</p>
+                        </div>
+                    </div>
+                    <div class="other">
+                        <h3>Department</h3>
+                        <p><?php echo $department ?></p>
+                    </div>
+                </div>
+            </div>
+            <div class="login-history">
+                <p>Login History</p>
+            </div>
+        </form>
     </main>
 
     <footer>

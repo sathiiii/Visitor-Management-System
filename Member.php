@@ -16,9 +16,9 @@ class Member
         $this->ds = new DataSource();
     }
 
-    function getMemberById($memberId, $tablename, $idName)
+    function getAdminById($memberId)
     {
-        $query = "SELECT * FROM $tablename WHERE $idName = ?";
+        $query = "SELECT * FROM admins, staff WHERE admins.staff_id = ?";
         $paramType = "i";
         $paramArray = array($memberId);
         $memberResult = $this->ds->select($query, $paramType, $paramArray);
