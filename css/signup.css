@@ -1,0 +1,120 @@
+body{
+  background-image: url(img/undraw_product_tour_foyt.svg); 
+  background-size: 700px; background-repeat: no-repeat; 
+  background-position-y: 17vmax; 
+  background-position-x: 50px ;
+  background-color: #F0FAF8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.checkbox{
+  width: 10%
+}
+table{
+  width: 410px;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 6px;
+}
+.form{
+  width: 40%;
+  position: relative;
+  position: relative;
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  background-color: rgba(255, 255, 255, 0.5); 
+  border-radius: 5px;
+  padding-bottom: 10px;
+}
+.form input{
+  position: relative;
+  color: #14cc52;
+  padding-top: 20px;
+  width: 100%;
+  border: none;
+  background: none;
+  border-bottom: 1px solid #14cc52;
+  outline: none;
+}
+.form-div { margin-top: 100px; border: 1px solid #e0e0e0; }
+#profileDisplay { display: block; height: 150px; margin: 0px auto; border-radius: 50%; }
+.img-placeholder {
+  color: white;
+  background: black;
+  opacity: .7;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+.img-placeholder h4 {
+  margin-top: 45%;
+  color: white;
+  font-size: medium;
+}
+.img-div:hover .img-placeholder {
+  display: block;
+  cursor: pointer;
+}
+#message {
+  display:none;
+  height: 25px;
+  color: #000;
+  position: relative;
+  padding: 5px;
+}
+
+#message p {
+  font-size: 12px;
+}
+
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+button{
+  background-color: #2CD889;
+  border: none;
+  color: #ffffff;
+  padding: 5px;
+  text-align: center;
+  padding-top: 5px;
+  top: 5px;
+  margin-top: 5px;
+  position: relative;
+  width: 100%;
+  
+}
+#passl, #passl1 {
+  position: relative;
+}
+#passcheck, #passcheck1 {
+  display: none;
+}
+#passcheck:checked + #passl::after{
+  content: "Hide";
+}
+.col2{
+  width: 15px;
+}
