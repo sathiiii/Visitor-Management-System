@@ -7,13 +7,15 @@ Reference page 1: http://softdesigners.co.in/visitor-gatepass-management-system/
 
 ## TO-DOs (Mathak wena ewa DAAPAAAAN):
 * Dashboard eke widgets tika welaawak thiyenawanam balapan kawruhari (@shamal + @dinura + @sathira)
-* ~~Design for signup page~~ (meka ada karannam)
+* ~~Design for signup page~~
 * Content inside each page in main site
-* Login pages (PHP + js) (@shamal)
+* Guest Login (PHP + js) (@shamal)
+* Guest Dashboard
 
 ## Updates:
 * Replaced index.html, visitors.html, appointments.html, calendar.html, messages.html with .php files
 * Finished styling login, login_admin and login_guest
+* Finished login_admin
 * Files tika clone karala sex karaganilla
 
 ## NOTES:
