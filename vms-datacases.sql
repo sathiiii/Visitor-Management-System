@@ -14,7 +14,7 @@ CREATE TABLE `vms`.`staff` (
   `address` VARCHAR(70) NOT NULL,
   `phone_no` VARCHAR(10) NULL,
   `email` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(40) NOT NULL,
+  `password` VARCHAR(50) NOT NULL,
   `profile_pic` VARCHAR(255),
   PRIMARY KEY (`staff_id`));
 INSERT INTO `vms`.`staff` (`staff_id`, `first_name`, `last_name`, `department`, `address`, `email`, `password`, `profile_pic`) VALUES ('1', 'Roshan', 'Ragel',  'COMP', 'Kandy', 'r@pdn.ac.lk', 'password', '');
@@ -42,6 +42,7 @@ CREATE TABLE `vms`.`admins` (
   `staff_id` INT NOT NULL,
   `authorization` VARCHAR(50) NOT NULL,
   `username` VARCHAR(30) NOT NULL,
+  `last_active` BOOLEAN DEFAULT true,
   PRIMARY KEY (`admin_id`),
   FOREIGN KEY (`staff_id`) REFERENCES `vms`.`staff` (`staff_id`) ON UPDATE CASCADE
 );

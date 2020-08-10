@@ -16,11 +16,11 @@ class Member
         $this->ds = new DataSource();
     }
 
-    function getAdminById($memberId)
+    function getAdminById($adminId)
     {
         $query = "SELECT * FROM admins, staff WHERE admins.staff_id = ?";
         $paramType = "i";
-        $paramArray = array($memberId);
+        $paramArray = array($adminId);
         $memberResult = $this->ds->select($query, $paramType, $paramArray);
         
         return $memberResult;
@@ -37,6 +37,17 @@ class Member
         }
         \setcookie("error", "1");
         \setcookie("username", "$username");
+    }
+
+    public function processAdminLogout($adminId) {
+        $last_active = $_COOKIE['status'];
+        $query = "UPDATE admins SET last_active = '$last_active' WHERE staff_id = ?";
+        $paramType = "i";
+        $paramArray = array($adminId);
+        $conn = $this->ds->getConnection();
+        $stmt = $conn->prepare($query);
+        $this->ds->bindQueryParams($stmt, $paramType, $paramArray);
+        $stmt->execute();
     }
 }
 ?>

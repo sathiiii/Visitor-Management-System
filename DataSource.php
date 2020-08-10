@@ -53,7 +53,7 @@ class DataSource
             return $resultset;
         }
     }
-    
+
     /**
      * To insert
      * @param string $query

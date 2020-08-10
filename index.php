@@ -8,10 +8,11 @@ session_start();
 if (!empty($_SESSION["adminId"])) {
     require_once "Member.php";
     $admin = new Member();
-    $adminResult = $admin->getAdminById($_SESSION["adminId"], "admins", "staff_id");
+    $adminResult = $admin->getAdminById($_SESSION["adminId"]);
 }
 
 $username = $adminResult[0]["username"];
+\setcookie('status', $adminResult[0]["last_active"]);
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +34,7 @@ $username = $adminResult[0]["username"];
         <!-- Container for logo -->
         <div class="logo-container">
             <a href="index.php">
-                <svg xmlns="http://www.w3.org/2000/svg" width="130.98" height="20.7" viewBox="0 0 130.98 20.7"><path class="a" d="M12.93,0l7.71-20.01H15.78L10.26-4.62,4.71-20.01H-.15L7.59,0ZM29.76,0V-20.01H25.5V0ZM43.83.36c5.4,0,8.01-2.76,8.01-6.42,0-7.47-11.49-5.34-11.49-8.52,0-1.2,1.02-2.01,2.85-2.01a8.6,8.6,0,0,1,5.82,2.19l2.37-3.12a11.13,11.13,0,0,0-7.8-2.79c-4.71,0-7.59,2.76-7.59,6.09,0,7.53,11.52,5.1,11.52,8.64,0,1.14-1.14,2.22-3.48,2.22a8.773,8.773,0,0,1-6.36-2.7L35.37-2.82A11.406,11.406,0,0,0,43.83.36ZM61.98,0V-20.01H57.72V0ZM77.85,0V-16.26h5.82v-3.75H67.71v3.75h5.85V0ZM98.16.36A10.054,10.054,0,0,0,108.63-9.99,10.054,10.054,0,0,0,98.16-20.34,10.047,10.047,0,0,0,87.72-9.99,10.047,10.047,0,0,0,98.16.36Zm0-3.78c-3.69,0-6.06-2.85-6.06-6.57,0-3.75,2.37-6.57,6.06-6.57s6.09,2.82,6.09,6.57C104.25-6.27,101.85-3.42,98.16-3.42ZM130.83,0l-4.5-7.62a5.742,5.742,0,0,0,4.38-5.94c0-3.72-2.55-6.45-6.72-6.45h-9.36V0h4.26V-7.11h3.12L125.94,0Zm-7.47-10.86h-4.47v-5.4h4.47a2.717,2.717,0,0,1,3,2.7A2.717,2.717,0,0,1,123.36-10.86Z" transform="translate(0.15 20.34)"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="130.98" height="20.7" viewBox="0 0 130.98 20.7"><path class="logo-path" d="M12.93,0l7.71-20.01H15.78L10.26-4.62,4.71-20.01H-.15L7.59,0ZM29.76,0V-20.01H25.5V0ZM43.83.36c5.4,0,8.01-2.76,8.01-6.42,0-7.47-11.49-5.34-11.49-8.52,0-1.2,1.02-2.01,2.85-2.01a8.6,8.6,0,0,1,5.82,2.19l2.37-3.12a11.13,11.13,0,0,0-7.8-2.79c-4.71,0-7.59,2.76-7.59,6.09,0,7.53,11.52,5.1,11.52,8.64,0,1.14-1.14,2.22-3.48,2.22a8.773,8.773,0,0,1-6.36-2.7L35.37-2.82A11.406,11.406,0,0,0,43.83.36ZM61.98,0V-20.01H57.72V0ZM77.85,0V-16.26h5.82v-3.75H67.71v3.75h5.85V0ZM98.16.36A10.054,10.054,0,0,0,108.63-9.99,10.054,10.054,0,0,0,98.16-20.34,10.047,10.047,0,0,0,87.72-9.99,10.047,10.047,0,0,0,98.16.36Zm0-3.78c-3.69,0-6.06-2.85-6.06-6.57,0-3.75,2.37-6.57,6.06-6.57s6.09,2.82,6.09,6.57C104.25-6.27,101.85-3.42,98.16-3.42ZM130.83,0l-4.5-7.62a5.742,5.742,0,0,0,4.38-5.94c0-3.72-2.55-6.45-6.72-6.45h-9.36V0h4.26V-7.11h3.12L125.94,0Zm-7.47-10.86h-4.47v-5.4h4.47a2.717,2.717,0,0,1,3,2.7A2.717,2.717,0,0,1,123.36-10.86Z" transform="translate(0.15 20.34)"/></svg>
             </a>
         </div>
         <!-- Navigation Bar -->
@@ -51,7 +52,7 @@ $username = $adminResult[0]["username"];
         <div class="nav-right mobile-hide">
             <!-- Use 'action-btn' class for other buttons also -->
             <div class="action-btn">
-                <a href="#" id="add-visitor">ADD VISITOR</a>
+                <a href="#" id="add-visitor" onclick="showPopup();">ADD VISITOR</a>
             </div>
             <div class="messages">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="19" viewBox="0 0 512 390"><g transform="translate(0 -61)"><path d="M467,61H45A45.077,45.077,0,0,0,0,106V406a45.073,45.073,0,0,0,45,45H467a45.073,45.073,0,0,0,45-45V106A45.073,45.073,0,0,0,467,61Zm-6.214,30L256.954,294.833,51.359,91ZM30,399.788V112.069l144.479,143.24ZM51.213,421l144.57-144.57,50.657,50.222a15,15,0,0,0,21.167-.046L317,277.213,460.787,421ZM482,399.787,338.213,256,482,112.212Z"/></g></svg>
@@ -100,12 +101,13 @@ $username = $adminResult[0]["username"];
             </li>
         </ul>
     </div>
+    <!-- This has to be completed -->
     <div id="hamburger-menu" class="menu back-blur desktop-hide">
         
     </div>
     <!-- Used for the header background -->
     <div class="nav-cover"></div>
-
+    <div class="overlay back-blur"></div>
     <!-- Meh widgets tika welaawak thyenawanam sex krapn kawruhari =) -->
     <main>
         <div id="appointment-stats" class="widget"></div>
@@ -118,7 +120,12 @@ $username = $adminResult[0]["username"];
         <div id="w4" class="widget"></div>
         <div id="w5" class="widget"></div>
     </main>
-
+    <div class="add-visitor popup">
+        <div class="popup-header">
+            <p>Add Visitor</p>
+            <svg id="close-btn" onclick="hidePopup()" xmlns="http://www.w3.org/2000/svg" width="24.146" height="24.146" viewBox="0 0 24.146 24.146"><defs><style>.circle{fill:none;stroke:#707070;stroke-width:2px;}.close{fill:#707070;}</style></defs><g transform="translate(-401.479 -18.479)"><g transform="translate(400.428 17.428)"><path id="circle" class="circle" d="M13.123,24.2A11.073,11.073,0,1,1,24.2,13.123,11.067,11.067,0,0,1,13.123,24.2Z"/></g><g transform="translate(408.761 25.761)"><path class="close" d="M171.835,170.386l-3.04-3.04,3.04-3.04a1.025,1.025,0,1,0-1.45-1.45l-3.04,3.04-3.04-3.04a1.025,1.025,0,1,0-1.45,1.45l3.04,3.04-3.04,3.04a1.025,1.025,0,1,0,1.45,1.45l3.04-3.04,3.04,3.04a1.025,1.025,0,1,0,1.45-1.45Z" transform="translate(-162.555 -162.556)"/></g></g></svg>
+        </div>
+    </div>
     <footer>
         <p>Copyright &copy; 2020 Bitlasagna.</p>
     </footer>

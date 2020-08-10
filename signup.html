@@ -1,80 +1,72 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--link rel="stylesheet" href="signup.css"-->
-        <link rel="icon" href="img/icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="css/signup.css" />
         <title>Register Form</title>
     </head>
     <body>
-    <dev class="form">
-        <form action="signup.php" method="POST" enctype="multipart/form-data">
+        <form action="insert.php" method="POST">
             <table>
                 <tr>
-                    <td>
-                        <div class="form-group text-center" style="position: relative;" >
-                        <span class="img-div">
-                            <div class="text-center img-placeholder"  onClick="triggerClick()">
-                            <h4>Update image</h4>
-                            </div>
-                            <img src="img/download.jpg" onClick="triggerClick()" id="profileDisplay">
-                        </span>
-                        <input type="file" name="profileImage" onChange="displayImage(this)" id="profileImage" class="form-control" style="display: none;">
-                        <label>Profile Image</label>
-                        </div>
-                        <button type="submit" name="save_profile" class="btn btn-primary btn-block" style="display: none;">Save User</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                            <input type="text" name="first_name" autocomplete="off" placeholder="First Name" colspan="2" align="center" required>
-                    </td>
+                    <td><input type="text" name="first_name" placeholder="First Name" colspan="2" align="center" required></td>
                 </tr>
                 <tr>
                     <td><input type="text" name="last_name" placeholder="Last Name" colspan="2" align="center" required></td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="text" name="username" placeholder="Username" colspan="2" align="center" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="password" name="password" id='password' class="pass" placeholder="Password" pattern=".{4}" required></td>
-                    <td class="col2"><label id = "passl" for="passcheck">Show</label><input type="checkbox" class="checkbox" id="passcheck"  onclick="passFunc('password')"/></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <div id="message">
-                            <p id="length" class="invalid">Minimum <b>4 characters required.</b></p>
-                        </div>
-                    </td>
+                    <td><input type="password" name="password" id='password' class="pass" placeholder="Password" required></td>
+                    <td><input type="checkbox" onclick="passFunc('password')">Show Password</td>
                 </tr>
                 <tr>
                     <td><input type="password" name="confirm_password" id='confirm_password' class="pass" placeholder="Confirm Password" colspan="2" align="center" required></td>
-                    <td class="col2"><label id = "passl1" for="passcheck1">Show</label><input type="checkbox" class="checkbox" id="passcheck1" onclick="passFunc('confirm_password')"></td>
+                    <td><input type="checkbox" onclick="passFunc('confirm_password')">Show Password</td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="NIC" placeholder="NIC" colspan="2" align="center" required></td>
+                    <td><input type="nic" name="NIC" placeholder="NIC" colspan="2" align="center" required></td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="address" placeholder="Address" colspan="2" align="center" required></td>
+                    <td><input type="address" name="address" placeholder="Address" colspan="2" align="center" required></td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="tel_no" placeholder="Telephone Number" colspan="2" align="center" required></td>
+                    <td><input type="tel_no" name="tel_no" placeholder="Telephone Number" colspan="2" align="center" required></td>
                 </tr>
                 <tr>
                     <td><input type="email" name="email" placeholder="Email" colspan="2" align="center" required></td>
                 </tr> 
                 <tr>
-                    <td><button type="submit" class="button" id='Submit' value="Submit" onclick="validatePassword()">Sumbit</button></td>
+                    <td><input type="submit" id='Submit' value="Submit" onclick="validatePassword()"></td>
                 </tr>
             </table>
         </form>
-    </dev>
+        <script>
+            function passFunc(y) {
+            var x = document.getElementById(y);
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+            }
+            var password = document.getElementById("password"),
+            confirm_password = document.getElementById("confirm_password");
+
+            function validatePassword() {
+            if (password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+            }
+
+            password.onchange = validatePassword;
+            confirm_password.onkeyup = validatePassword;
+
+        </script>
     </body>
-    <script src="scripts/signup.js"></script>
 </html>
+<style>
+    body{
+        display: grid;
+        place-items: center;
+    }
+    
+</style>
