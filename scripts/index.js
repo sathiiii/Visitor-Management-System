@@ -1,18 +1,26 @@
-var username = "<?php echo $username ?>";
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    else return "";
+}
 
 function toggle_visibility(id) {
     document.getElementById(id).classList.toggle("show");
 }
 
 window.onload = function() {
-    if(!document.getElementById("checkstatus").checked) {
-        document.getElementById("status").innerText = "inactive";
-        document.getElementById("status").style.color = "orange";
-    }
+    var checkstatus = document.getElementById("checkstatus");
+    if (getCookie("status") == "1")
+        checkstatus.checked = true;
+    else
+        checkstatus.checked = false;
+    updateStatus(checkstatus);
 }
 
 window.onclick = function(event) {
-    if (!event.target.matches(".dropbtn") && event.target.id != "stat" && event.target.id != "status") {
+    console.log(event.target);
+    if (!event.target.matches(".dropbtn") && event.target.id != "stat" && !event.target.matches('.slider') && event.target.id != 'checkstatus') {
         var dropdowns = document.getElementsByClassName("dropdown");
         var i;
         for (i = 0; i < dropdowns.length; i++) {
@@ -46,11 +54,23 @@ window.onresize = function(event) {
 
 function updateStatus(checkbox) {
     if (checkbox.checked) {
+        document.cookie = "status=1";
         document.getElementById("status").innerText = "active";
         document.getElementById("status").style.color = "#2CD889";
     }
     else {
+        document.cookie = "status=0";
         document.getElementById("status").innerText = "inactive";
         document.getElementById("status").style.color = "orange";
     }
+}
+
+function showPopup() {
+    document.querySelector('.overlay').style.display = 'block';
+    document.querySelector('.add-visitor').style.display = 'block';
+}
+
+function hidePopup() {
+    document.querySelector('.overlay').style.display = 'none';
+    document.querySelector('.add-visitor').style.display = 'none';
 }

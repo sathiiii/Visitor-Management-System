@@ -65,6 +65,8 @@ function init() {
         var username = getCookie("username");
         document.getElementById("username").value = username;
         document.getElementById("warnings").style.display = 'block';
+        if (err == "2")
+            document.getElementById("warnings").innerHTML = "Username doesn't exist";
         document.cookie = "error=;";
     }
 }
