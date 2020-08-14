@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die('Connection Failed : ' .$conn->connect_error);
     }
     else {
-        move_uploaded_file($_FILES["profile-upload"]["tmp_name"], $targetFilePath . time());
+        move_uploaded_file($_FILES["profile-upload"]["tmp_name"], $targetFilePath);
         $INSERT = "INSERT INTO visitors (username, first_name, last_name, NIC, address, tel_no, email, password, profile_pic) VALUES ('$username', '$first_name', '$last_name', '$NIC', '$address', '$tel_no', '$email', '$password', '$file_name')";
         $stmt = $conn->prepare($INSERT);
         $stmt->execute();
