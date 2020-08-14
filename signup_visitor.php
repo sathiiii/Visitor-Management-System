@@ -23,7 +23,7 @@
                 <p><b>Sign up</b> and be a</p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="381.933" height="60.36" viewBox="0 0 381.933 60.36"><defs><style>.a{fill:#646d82;}</style></defs><path class="a" d="M37.991,38.971,60.473-19.378H46.3L30.205,25.5,14.022-19.378H-.15L22.42,38.971Zm49.076,0V-19.378H74.644V38.971Zm41.028,1.05c15.746,0,23.357-8.048,23.357-18.72,0-21.782-33.5-15.571-33.5-24.844,0-3.5,2.974-5.861,8.31-5.861a25.063,25.063,0,0,1,16.971,6.386l6.911-9.1c-5.774-5.336-13.472-8.136-22.744-8.136-13.734,0-22.132,8.048-22.132,17.758,0,21.957,33.592,14.871,33.592,25.194,0,3.324-3.324,6.473-10.148,6.473A25.582,25.582,0,0,1,110.161,21.3l-6.736,9.448C108.849,36.259,116.9,40.02,128.094,40.02Zm52.925-1.05V-19.378H168.6V38.971Zm46.276,0V-8.443h16.971V-19.378H197.727V-8.443h17.058V38.971Zm59.223,1.05c17.671,0,30.53-12.6,30.53-30.18s-12.859-30.18-30.53-30.18c-17.583,0-30.443,12.6-30.443,30.18S268.935,40.02,286.518,40.02Zm0-11.022c-10.76,0-17.671-8.31-17.671-19.158,0-10.935,6.911-19.158,17.671-19.158S304.276-1.095,304.276,9.84C304.276,20.688,297.278,29,286.518,29Zm95.264,9.973-13.122-22.22c6.3-1.487,12.772-7,12.772-17.321,0-10.847-7.436-18.808-19.6-18.808H334.544V38.971h12.422V18.238h9.1l11.46,20.732ZM360,7.3H346.966V-8.443H360c4.986,0,8.748,2.974,8.748,7.873S364.987,7.3,360,7.3Z" transform="translate(0.15 20.34)"/></svg>
             </div>
-            <form id="signup-info" action="insert.php" method="POST">
+            <form id="signup-info" action="insert.php" method="POST" enctype= "multipart/form-data">
                 <div class="personal-info">
                     <p>Personal Information</p>
                     <div class="upload-profile-image">
@@ -84,7 +84,7 @@
                     <p>Account</p>
                     <div class="username-container">
                         <div class="textbox username">
-                            <input type="text" id="username" onkeyup="check(this)" autocomplete="off" required>
+                            <input type="text" id="username" name="username" onkeyup="check(this)" autocomplete="off" required>
                             <label for="username" class="label-name">
                                 <span class="content-name">Username</span>
                             </label>
@@ -93,7 +93,7 @@
                     </div>
                     <div class="password-confirmation">
                         <div class="textbox password">
-                            <input type="password" id="password" onkeyup="validatePassword(this)" autocomplete="off" required>
+                            <input type="password" id="password" name="password" onkeyup="validatePassword(this)" autocomplete="off" required>
                             <label for="password" class="label-name">
                                 <span class="content-name">Password</span>
                             </label>

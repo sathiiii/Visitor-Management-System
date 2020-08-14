@@ -14,7 +14,7 @@ CREATE TABLE `vms`.`staff` (
   `address` VARCHAR(70) NOT NULL,
   `phone_no` VARCHAR(10) NULL,
   `email` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(50) NOT NULL,
+  `password` VARCHAR(500) NOT NULL,
   `profile_pic` VARCHAR(255),
   PRIMARY KEY (`staff_id`));
 INSERT INTO `vms`.`staff` (`staff_id`, `first_name`, `last_name`, `department`, `address`, `email`, `password`, `profile_pic`) VALUES ('1', 'Roshan', 'Ragel',  'COMP', 'Kandy', 'r@pdn.ac.lk', 'password', '');
@@ -31,7 +31,7 @@ INSERT INTO `vms`.`staff` (`staff_id`, `first_name`, `last_name`, `department`, 
   `address` VARCHAR(70) NOT NULL,
   `phone_no` VARCHAR(10) NULL,
   `email` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(40) NOT NULL,
+  `password` VARCHAR(500) NOT NULL,
   `profile_pic` VARCHAR(255),
     PRIMARY KEY (`reg_no`));
 -- INSERT INTO `vms`.`students` (`reg_no`, `first_name`, `last_name`,  `department`, `address`, `email`) VALUES ('E/17/072', 'Dinura', 'Dissanayake',  'COMP', 'Colombo', 'e17072@eng.pdn.ac.lk');
@@ -58,7 +58,7 @@ CREATE TABLE `vms`.`visitors` (
    `address` VARCHAR(70) NOT NULL,
    `tel_no` VARCHAR(10) NOT NULL,
    `email` VARCHAR(30) NOT NULL,
-   `password` VARCHAR(40) NOT NULL,
+   `password` VARCHAR(500) NOT NULL,
    `profile_pic` VARCHAR(255),
    PRIMARY KEY (`visitors_id`),
    KEY (`NIC`)

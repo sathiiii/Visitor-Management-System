@@ -1,5 +1,8 @@
 <?php
-    $profile_path = $_POST['profile-upload'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $target_directory = "img/profile/visitor";
+    $file_name = basename($_FILES["profile-upload"]["name"]);
+    $targetFilePath = $target_directory . $file_name;
     $first_name = $_POST['firstname'];
     $last_name = $_POST['lastname'];
     $NIC = $_POST['nic'];
@@ -17,9 +20,11 @@
         die('Connection Failed : ' .$conn->connect_error);
     }
     else {
-        $INSERT = "INSERT INTO visitors (username, first_name, last_name, NIC, address, tel_no, email, password) VALUES ('$username', '$first_name', '$last_name', '$NIC', '$address', '$tel_no', '$email', '$password')";
+        move_uploaded_file($_FILES["profile-upload"]["tmp_name"], $targetFilePath);
+        $INSERT = "INSERT INTO visitors (username, first_name, last_name, NIC, address, tel_no, email, password, profile_pic) VALUES ('$username', '$first_name', '$last_name', '$NIC', '$address', '$tel_no', '$email', '$password', '$file_name')";
         $stmt = $conn->prepare($INSERT);
         $stmt->execute();
         header("Location: login_guest.html");
     }
+}
 ?>
