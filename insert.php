@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $target_directory = "img/profile/visitor";
+    $target_directory = "img/profile/visitor/";
     $file_name = basename($_FILES["profile-upload"]["name"]);
     $targetFilePath = $target_directory . $file_name;
     $first_name = $_POST['firstname'];
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die('Connection Failed : ' .$conn->connect_error);
     }
     else {
-        move_uploaded_file($_FILES["profile-upload"]["tmp_name"], $targetFilePath);
+        move_uploaded_file($_FILES["profile-upload"]["tmp_name"], $targetFilePath . time());
         $INSERT = "INSERT INTO visitors (username, first_name, last_name, NIC, address, tel_no, email, password, profile_pic) VALUES ('$username', '$first_name', '$last_name', '$NIC', '$address', '$tel_no', '$email', '$password', '$file_name')";
         $stmt = $conn->prepare($INSERT);
         $stmt->execute();
