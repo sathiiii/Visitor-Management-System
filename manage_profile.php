@@ -28,7 +28,7 @@ $department = $departments[$adminResult[0]["department"]];
     <!-- Use this font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/manage_profile_style.css">
-    <link rel="icon" href="img/icon.png">
+    <link rel="icon" href="img/admin_icon.png">
     <script src="scripts/index.js"></script>
     <script src="scripts/manage_profile.js"></script>
     <title>Dashboard</title>
